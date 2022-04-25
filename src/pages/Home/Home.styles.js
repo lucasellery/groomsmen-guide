@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as ArrowRight } from '../../assets/icons/arrow-right.svg';
+import { ReactComponent as Image } from '../../assets/images/main-page.svg'
 
 export const MainHomeContainer = styled.div`
   display: flex;
@@ -21,8 +22,9 @@ export const Title = styled.h1`
   white-space: nowrap;
 `;
 
-export const Image = styled.img`
+export const ImageGroomsmen = styled(Image)`
   width: 100%;
+  height: 400px;
 `;
 
 export const Button = styled.button`

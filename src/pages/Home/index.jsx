@@ -4,18 +4,18 @@ import {
   MainHomeContainer,
   Title,
   Footer,
-  Image,
   Button,
-  Arrow
+  Arrow,
+  ImageGroomsmen
 } from './Home.styles';
-
 
 export default function Home() {
   return (
     <MainHomeContainer>
       <HomeContainer>
         <Title>Manual dos Padrinhos</Title>
-        <Image src="../../assets/images/main-page.svg" alt="" />
+        {/* <Image src="../../assets/images/main-page.svg" alt="" /> */}
+        <ImageGroomsmen />
         <Button onClick={() => {}}>
           <span>Começar</span>
           <Arrow />
