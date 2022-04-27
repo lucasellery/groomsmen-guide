@@ -16,14 +16,8 @@ export const HomeContainer = styled.main`
   margin-top: 3.75rem;
 `;
 
-export const Title = styled.h1`
-  font-size: 2.2rem;
-  font-family: 'Oleo Script Swash Caps', sans-serif;
-  white-space: nowrap;
-`;
-
 export const ImageGroomsmen = styled(Image)`
-  width: 100%;
+  width: auto;
   height: 400px;
 `;
 
@@ -50,13 +44,4 @@ export const Button = styled.button`
 export const Arrow = styled(ArrowRight)`
   margin-left: 16px;
   width: 15px;
-`;
-
-export const Footer = styled.footer`
-  font-size: 0.875rem;
-  font-family: 'Inter', sans-serif;
-  white-space: nowrap;
-
-  position: absolute;
-  bottom: 0rem;
 `;

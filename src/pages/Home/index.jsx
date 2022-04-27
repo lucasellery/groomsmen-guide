@@ -1,30 +1,32 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   HomeContainer,
   MainHomeContainer,
-  Title,
-  Footer,
   Button,
   Arrow,
   ImageGroomsmen
 } from './Home.styles';
+import Title from '../../components/Title';
+import Footer from '../../components/Footer';
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <MainHomeContainer>
       <HomeContainer>
-        <Title>Manual dos Padrinhos</Title>
-        {/* <Image src="../../assets/images/main-page.svg" alt="" /> */}
+        <Title isHeader={false} label="Manual dos Padrinhos" />
+
         <ImageGroomsmen />
-        <Button onClick={() => {}}>
+
+        <Button onClick={() => navigate('/tips')}>
           <span>Começar</span>
           <Arrow />
         </Button>
       </HomeContainer>
 
-      <Footer>
-        Powered by Lucas Ellery
-      </Footer>
+      <Footer />
     </MainHomeContainer>
   )
 }
