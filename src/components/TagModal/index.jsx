@@ -7,10 +7,6 @@ export default function TagModal({
   onClose,
   items
 }) {
-  useEffect(() => {
-    items?.map(item => console.log(item));
-  }, [open]);
-
   return (
     <>
       {open && (

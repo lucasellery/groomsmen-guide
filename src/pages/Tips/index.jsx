@@ -5,28 +5,28 @@ import * as S from './Tips.styles';
 import Footer from '../../components/Footer';
 import Tag from '../../components/Tag';
 import TagModal from '../../components/TagModal';
-import { ReactComponent as Clock } from '../../assets/icons/clock.svg';
+import { generalRules, groomsmen } from '../../utils/rules';
 
 export default function Tips() {
   const navigate = useNavigate();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [tipType, setTipType] = useState('');
 
-  const handleToggleModal = () => {
-    setIsModalOpen(!isModalOpen);
+  function getTipItem(tip) {
+    const tips = {
+      'generalRules': generalRules,
+      'groomsmen': groomsmen,
+      'default': '',
+    };
+
+    return tips[tip] || tips['default'];
   }
 
-  const items = [
-    {
-      title: 'Para o grande dia...',
-      itemTitle: 'Chegue com antecedência',
-      sentences: [
-        'Não podemos nos atrasar, ok?',
-        'Pedimos que seja 30 minutos antes da cerimônia.'
-      ],
-      icon: <Clock />
-    }
-  ];
+  const handleToggleModal = (type) => {
+    setTipType(type);
+    setIsModalOpen(!isModalOpen);
+  }
 
   return (
     <div>
@@ -39,10 +39,15 @@ export default function Tips() {
       <S.MainContainer>
         <Tag
           hasTagBg={true}
-          handleOpenModal={handleToggleModal}
+          handleOpenModal={() => handleToggleModal('generalRules')}
         />
-        <Tag title="Endereço" />
-        <Tag title="Padrinhos" />
+        <Tag
+          title="Endereço"
+        />
+        <Tag
+          title="Padrinhos"
+          handleOpenModal={() => handleToggleModal('groomsmen')}
+        />
         <Tag title="Madrinhas" />
         <Tag title="Instruções" />
         <Tag title="Inspirações" />
@@ -53,7 +58,7 @@ export default function Tips() {
       <TagModal
         open={isModalOpen}
         onClose={handleToggleModal}
-        items={items}
+        items={getTipItem(tipType)}
       />
     </div>
   )

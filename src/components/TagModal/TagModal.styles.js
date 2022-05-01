@@ -17,7 +17,7 @@ export const Modal = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #E7ECEF;
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
   border-radius: 5px;
   z-index: 11;
 
@@ -52,7 +52,6 @@ export const Main = styled.main`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
 
     gap: 20px;
   }
