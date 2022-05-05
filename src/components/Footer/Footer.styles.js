@@ -6,9 +6,16 @@ export const Footer = styled.footer`
   white-space: nowrap;
 
   width: 100%;
-  height: 28px;
   position: absolute;
   bottom: -30px; 
   left: 0px; 
-  text-align: center; 
+  text-align: center;
+
+  padding: 0px 0px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 `;

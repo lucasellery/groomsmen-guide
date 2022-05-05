@@ -5,7 +5,7 @@ import * as S from './Tips.styles';
 import Footer from '../../components/Footer';
 import Tag from '../../components/Tag';
 import TagModal from '../../components/TagModal';
-import { generalRules, groomsmen } from '../../utils/rules';
+import { generalRules, groomsmen, bridesmaid, inspiration, address } from '../../utils/rules';
 
 export default function Tips() {
   const navigate = useNavigate();
@@ -17,6 +17,9 @@ export default function Tips() {
     const tips = {
       'generalRules': generalRules,
       'groomsmen': groomsmen,
+      'bridesmaid': bridesmaid,
+      'inspiration': inspiration,
+      'address': address,
       'default': '',
     };
 
@@ -43,14 +46,23 @@ export default function Tips() {
         />
         <Tag
           title="Endereço"
+          handleOpenModal={() => handleToggleModal('address')}
         />
         <Tag
           title="Padrinhos"
           handleOpenModal={() => handleToggleModal('groomsmen')}
         />
-        <Tag title="Madrinhas" />
-        <Tag title="Instruções" />
-        <Tag title="Inspirações" />
+        <Tag
+          title="Madrinhas"
+          handleOpenModal={() => handleToggleModal('bridesmaid')}
+        />
+        <Tag
+          title="Instruções"
+        />
+        <Tag
+          title="Inspirações"
+          handleOpenModal={() => handleToggleModal('inspiration')}
+        />
       </S.MainContainer>
 
       <Footer />

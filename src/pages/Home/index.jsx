@@ -8,7 +8,6 @@ import {
   ImageGroomsmen
 } from './Home.styles';
 import Title from '../../components/Title';
-import Footer from '../../components/Footer';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -25,8 +24,6 @@ export default function Home() {
           <Arrow />
         </Button>
       </HomeContainer>
-
-      <Footer />
     </MainHomeContainer>
   )
 }
