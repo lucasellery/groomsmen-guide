@@ -1,29 +1,21 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  HomeContainer,
-  MainHomeContainer,
-  Button,
-  Arrow,
-  ImageGroomsmen
-} from './Home.styles';
-import Title from '../../components/Title';
+import * as S from './Home.styles';
 
 export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <MainHomeContainer>
-      <HomeContainer>
-        <Title isHeader={false} label="Manual dos Padrinhos" />
+    <S.MainHomeContainer>
+      <S.ImageGroomsmen />
 
-        <ImageGroomsmen />
+      <S.Button onClick={() => navigate('/tips')}>
+        <span>Começar</span>
+      </S.Button>
 
-        <Button onClick={() => navigate('/tips')}>
-          <span>Começar</span>
-          <Arrow />
-        </Button>
-      </HomeContainer>
-    </MainHomeContainer>
+      <S.Footer>
+        <span>Powered by Lucas Ellery</span>
+      </S.Footer>
+    </S.MainHomeContainer>
   )
 }
