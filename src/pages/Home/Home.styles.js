@@ -15,10 +15,17 @@ export const MainHomeContainer = styled.div`
 
 export const ImageGroomsmen = styled(Image)`
   width: auto;
-  height: 65vh;
+  height: 43vh;
 
   margin-top: -6.25rem;
   margin-bottom: 1.25rem;
+
+  @media (min-width: 768px) {
+    width: auto;
+    height: 70vh;
+
+    margin-bottom: 0;
+  }
 `;
 
 export const Button = styled.button`
@@ -30,6 +37,8 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
 
+  filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+
   background: #2D3047;
 
   border: none;
@@ -40,9 +49,28 @@ export const Button = styled.button`
   width: 12.75rem;
   height: 2.25rem;
 
+  cursor: pointer;
+
+  transition: 200ms ease-in-out;
+
+  margin-top: 35px;
+
   span {
     color: #FFFFFF;
     font-size: 1.25rem;
+  }
+
+  &:hover {
+    opacity: .9;
+  }
+
+  @media (min-width: 768px) {
+    width: 20rem;
+    height: 3.300rem;
+
+    span {
+      font-size: 1.875rem;
+    }
   }
 `;
 
@@ -56,5 +84,11 @@ export const Footer = styled.footer`
     font-weight: 500;
     font-size: 0.625rem;
     text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    line-height: 20px;
+    color: #2D3047;
   }
 `;
