@@ -85,10 +85,19 @@ export const Footer = styled.footer`
     font-size: 0.625rem;
     text-align: center;
   }
-
+  
   @media (min-width: 768px) {
     font-size: 1rem;
     line-height: 20px;
     color: #2D3047;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      display: flex;
+      gap: 5px;
+    }
   }
 `;

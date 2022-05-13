@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useIsMobile } from '../../hooks/useIsMobile';
 import * as S from './Home.styles';
+import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin-icon.svg';
+import { ReactComponent as GithubIcon } from '../../assets/icons/github-icon.svg';
+import { ReactComponent as InstagramIcon } from '../../assets/icons/instagram.svg';
 
 export default function Home() {
   const navigate = useNavigate();
   const isMobile = useIsMobile();
-
-  console.log(isMobile)
 
   return (
     <S.MainHomeContainer>
@@ -18,12 +19,12 @@ export default function Home() {
       </S.Button>
 
       <S.Footer>
+        <div>
+          <LinkedinIcon />
+          <GithubIcon />
+          <InstagramIcon />
+        </div>
         <span>Powered by Lucas Ellery</span>
-        {!isMobile && (
-          <div>
-            
-          </div>
-        )}
       </S.Footer>
     </S.MainHomeContainer>
   )

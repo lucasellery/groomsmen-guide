@@ -6,12 +6,9 @@ export const Footer = styled.footer`
   white-space: nowrap;
 
   width: 100%;
-  position: absolute;
-  bottom: -30px; 
-  left: 0px; 
-  text-align: center;
 
   padding: 0px 0px;
+  margin-top: 60px;
 
   display: flex;
   flex-direction: row;
