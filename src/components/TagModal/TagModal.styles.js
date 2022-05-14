@@ -30,7 +30,7 @@ export const Modal = styled.div`
   height: auto;
   max-height: 80vh;
 
-  overflow: hidden;
+  overflow: overlay;
 
   @media (min-width: 768px) {
     width: 50%;
