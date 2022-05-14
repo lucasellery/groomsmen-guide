@@ -18,7 +18,9 @@ export default function TagModal({
               <div key={item.id}>
                 <S.Header>
                   <S.Close onClick={onClose} />
+
                   <Title isHeader={true} label={item.title} />
+
                 </S.Header>
 
                 {item.title === 'Inspirações' ? (
