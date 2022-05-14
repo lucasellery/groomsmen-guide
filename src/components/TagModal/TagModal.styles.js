@@ -28,7 +28,9 @@ export const Modal = styled.div`
   width: 80%;
   min-height: 40vh;
   height: auto;
-  max-height: 80%;
+  max-height: 80vh;
+
+  overflow: hidden;
 
   @media (min-width: 768px) {
     width: 50%;
