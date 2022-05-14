@@ -20,7 +20,7 @@ export const dateHour = [
     title: '',
     itemTitle: 'Cerimônia',
     sentences: [
-      'Dia 05 de dezembro de 2022',
+      'Dia 04 de dezembro de 2022',
       '19:00',
     ],
     icon: <BiChurch style={{ width: 30, height: 30 }} />
