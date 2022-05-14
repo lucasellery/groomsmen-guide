@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './Home.styles';
+import Footer from '../../components/Footer';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -12,10 +13,6 @@ export default function Home() {
       <S.Button onClick={() => navigate('/tips')}>
         <span>Começar</span>
       </S.Button>
-
-      <S.Footer>
-        <span>Powered by Lucas Ellery</span>
-      </S.Footer>
     </S.MainHomeContainer>
   )
 }
