@@ -36,6 +36,10 @@ export const Header = styled.header`
   justify-content: center;
 `;
 
+export const Head = styled.div`
+
+`;
+
 export const Close = styled(CloseIcon)`
   position: absolute;
   top: 5px;

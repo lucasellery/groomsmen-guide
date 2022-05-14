@@ -3,8 +3,6 @@ import styled from 'styled-components';
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
-
-
   gap: 30px;
 
   .little-tips-item {
@@ -22,14 +20,23 @@ export const Main = styled.main`
   }
 
   .little-tips-item-sentences p{
-    font-family: Inter;
-    font-size: 11px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #2D3047;
+
     margin-left: 10px;
   }
 `;
 
 export const ItemTitle = styled.span`
-  font-size: 18px;
-  font-family: 'Oleo Script Swash Caps', sans-serif;
+  font-family: 'Parisienne', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 14px;
+
   white-space: wrap;
 `;

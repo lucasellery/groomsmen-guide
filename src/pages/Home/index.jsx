@@ -1,9 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './Home.styles';
-import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin-icon.svg';
-import { ReactComponent as GithubIcon } from '../../assets/icons/github-icon.svg';
-import { ReactComponent as InstagramIcon } from '../../assets/icons/instagram.svg';
+import Footer from '../../components/Footer';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -15,15 +13,6 @@ export default function Home() {
       <S.Button onClick={() => navigate('/tips')}>
         <span>Começar</span>
       </S.Button>
-
-      <S.Footer>
-        <div>
-          <LinkedinIcon />
-          <GithubIcon />
-          <InstagramIcon />
-        </div>
-        <span>Powered by Lucas Ellery</span>
-      </S.Footer>
     </S.MainHomeContainer>
   )
 }

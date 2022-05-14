@@ -4,13 +4,7 @@ export default function MainModal({ item }) {
   return (
     <S.Main>
       <div className="little-tips-item">
-        {item.inspirationUrl ? (
-          <a href={item.inspirationUrl} target="_blank" rel="noreferrer">
-            {item.icon}
-          </a>
-        ) : (
-          item.icon
-        )}
+        {item.icon}
         <div className="little-tips-item-labels">
           <S.ItemTitle>{item.itemTitle}</S.ItemTitle>
           <div className="little-tips-item-sentences">

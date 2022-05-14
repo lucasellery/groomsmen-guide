@@ -4,7 +4,7 @@ import * as S from './Tips.styles';
 import Footer from '../../components/Footer';
 import Tag from '../../components/Tag';
 import TagModal from '../../components/TagModal';
-import { generalRules, groomsmen, bridesmaid, inspiration, address } from '../../utils/rules';
+import { dateHour, groomsmen, bridesmaid, inspiration, address, tips as tipsTag } from '../../utils/rules';
 import { ReactComponent as MainIcon } from '../../assets/icons/main-icon.svg';
 
 export default function Tips() {
@@ -15,11 +15,12 @@ export default function Tips() {
 
   function getTipItem(tip) {
     const tips = {
-      'generalRules': generalRules,
+      'dateHour': dateHour,
       'groomsmen': groomsmen,
       'bridesmaid': bridesmaid,
       'inspiration': inspiration,
       'address': address,
+      'tips': tipsTag,
       'default': '',
     };
 
@@ -45,7 +46,7 @@ export default function Tips() {
         <S.MainContainer>
           <Tag
             title="Datas e horários"
-            handleOpenModal={() => handleToggleModal('generalRules')}
+            handleOpenModal={() => handleToggleModal('dateHour')}
           />
           <Tag
             title="Endereço"
@@ -62,7 +63,8 @@ export default function Tips() {
             hasTipDarkColor={true}
           />
           <Tag
-            title="Instruções"
+            title="Dicas"
+            handleOpenModal={() => handleToggleModal('tips')}
           />
           <Tag
             title="Inspirações"

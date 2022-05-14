@@ -11,6 +11,11 @@ export const MainHomeContainer = styled.div`
   height: 100vh;
 
   background: linear-gradient(180deg, rgba(163, 193, 219, 0.7) 0%, rgba(167, 185, 195, 0.3) 65.1%);
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 100vh;
+  }
 `;
 
 export const ImageGroomsmen = styled(Image)`
@@ -25,6 +30,7 @@ export const ImageGroomsmen = styled(Image)`
     height: 70vh;
 
     margin-bottom: 0;
+    
   }
 `;
 
@@ -53,7 +59,7 @@ export const Button = styled.button`
 
   transition: 200ms ease-in-out;
 
-  margin-top: 35px;
+  margin-top: 60px;
 
   span {
     color: #FFFFFF;
@@ -67,37 +73,10 @@ export const Button = styled.button`
   @media (min-width: 768px) {
     width: 20rem;
     height: 3.300rem;
+    margin-top: 48px;
 
     span {
       font-size: 1.875rem;
-    }
-  }
-`;
-
-export const Footer = styled.footer`
-  position: absolute;
-  bottom: 0px;
-
-  span {
-    font-family: 'Nunito', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 0.625rem;
-    text-align: center;
-  }
-  
-  @media (min-width: 768px) {
-    font-size: 1rem;
-    line-height: 20px;
-    color: #2D3047;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    div {
-      display: flex;
-      gap: 5px;
     }
   }
 `;
