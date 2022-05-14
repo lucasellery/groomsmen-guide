@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ReactComponent as TagCouple } from '../../assets/images/tag-couple.svg';
 
 export const Container = styled.div`
   width: 100%;
@@ -11,6 +10,8 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: all 0.3s ease-in-out;
 
   cursor: pointer;
 
@@ -24,8 +25,14 @@ export const Container = styled.div`
     color: #2D3047;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
-`;
 
-export const Couple = styled(TagCouple)`
-  width: auto;
+  &:hover {
+    background: ${props => props.hasTipDarkColor ? "rgba(169, 187, 197, 0.9)" : "rgba(169, 187, 197, 0.6)"};
+  }
+
+  @media (min-width: 768px) {
+    width: 30%;
+    height: 66px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
 `;

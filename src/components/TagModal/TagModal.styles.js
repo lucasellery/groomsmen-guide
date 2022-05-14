@@ -9,6 +9,10 @@ export const Backdrop = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
+
+  @media (min-width: 768px) {
+    background-color: transparent;
+  }
 `;
 
 export const Modal = styled.div`
@@ -24,9 +28,17 @@ export const Modal = styled.div`
   width: 80%;
   min-height: 40vh;
   height: auto;
+  max-height: 80%;
 
   @media (min-width: 768px) {
     width: 50%;
+    position: none;
+
+    z-index: 0;
+
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 16px 16px 20px 10px rgba(0, 0, 0, 0.1);
   }
 `;
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Footer = styled.footer`
-  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito', sans-serif;
   white-space: nowrap;
 
   width: 100%;
@@ -29,12 +29,16 @@ export const Footer = styled.footer`
 
   @media (min-width: 768px) {
     font-size: 1rem;
-    line-height: 20px;
     color: #2D3047;
     
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    width: auto;
+    align-self: center;
+
+    position: relative;
 
     div {
       display: flex;

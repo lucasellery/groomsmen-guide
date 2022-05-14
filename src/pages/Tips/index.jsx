@@ -6,9 +6,12 @@ import Tag from '../../components/Tag';
 import TagModal from '../../components/TagModal';
 import { dateHour, groomsmen, bridesmaid, inspiration, address, tips as tipsTag } from '../../utils/rules';
 import { ReactComponent as MainIcon } from '../../assets/icons/main-icon.svg';
+import { ReactComponent as ManualSmall } from '../../assets/icons/manual-small.svg';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 export default function Tips() {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tipType, setTipType] = useState('');
@@ -38,40 +41,55 @@ export default function Tips() {
         <S.Header>
           <S.Arrow onClick={() => navigate('/')} />
           <S.TitleWithIcon>
-            <MainIcon />
-            <span>Manual dos Padrinhos</span>
+            {isMobile ? (
+              <>
+                <MainIcon />
+                <span>Manual dos Padrinhos</span>
+              </>
+            ) : (
+              <ManualSmall />
+            )}
           </S.TitleWithIcon>
         </S.Header>
-
-        <S.MainContainer>
-          <Tag
-            title="Datas e horários"
-            handleOpenModal={() => handleToggleModal('dateHour')}
-          />
-          <Tag
-            title="Endereço"
-            handleOpenModal={() => handleToggleModal('address')}
-            hasTipDarkColor={true}
-          />
-          <Tag
-            title="Padrinhos"
-            handleOpenModal={() => handleToggleModal('groomsmen')}
-          />
-          <Tag
-            title="Madrinhas"
-            handleOpenModal={() => handleToggleModal('bridesmaid')}
-            hasTipDarkColor={true}
-          />
-          <Tag
-            title="Dicas"
-            handleOpenModal={() => handleToggleModal('tips')}
-          />
-          <Tag
-            title="Inspirações"
-            handleOpenModal={() => handleToggleModal('inspiration')}
-            hasTipDarkColor={true}
-          />
-        </S.MainContainer>
+        
+        <S.DesktopContainer>
+          <S.MainContainer>
+            <Tag
+              title="Datas e horários"
+              handleOpenModal={() => handleToggleModal('dateHour')}
+            />
+            <Tag
+              title="Endereço"
+              handleOpenModal={() => handleToggleModal('address')}
+              hasTipDarkColor={true}
+            />
+            <Tag
+              title="Padrinhos"
+              handleOpenModal={() => handleToggleModal('groomsmen')}
+            />
+            <Tag
+              title="Madrinhas"
+              handleOpenModal={() => handleToggleModal('bridesmaid')}
+              hasTipDarkColor={true}
+            />
+            <Tag
+              title="Dicas"
+              handleOpenModal={() => handleToggleModal('tips')}
+            />
+            <Tag
+              title="Inspirações"
+              handleOpenModal={() => handleToggleModal('inspiration')}
+              hasTipDarkColor={true}
+            />
+          </S.MainContainer>
+          {!isMobile && (
+            <TagModal
+              open={isModalOpen}
+              onClose={handleToggleModal}
+              items={getTipItem(tipType)}
+            />
+          )}
+        </S.DesktopContainer>
 
         <Footer />
       </S.Container>
