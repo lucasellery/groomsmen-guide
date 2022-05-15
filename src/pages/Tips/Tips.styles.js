@@ -52,8 +52,9 @@ export const MainContainer = styled.main`
 
 export const DesktopContainer = styled.div`
   @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 `;
 

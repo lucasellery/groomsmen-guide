@@ -8,6 +8,7 @@ import { dateHour, groomsmen, bridesmaid, inspiration, address, tips as tipsTag 
 import { ReactComponent as MainIcon } from '../../assets/icons/main-icon.svg';
 import { ReactComponent as ManualSmall } from '../../assets/icons/manual-small.svg';
 import { useIsMobile } from '../../hooks/useIsMobile';
+import { InfoContainerDesktop } from '../../components/InfoContainerDesktop';
 
 export default function Tips() {
   const navigate = useNavigate();
@@ -82,11 +83,11 @@ export default function Tips() {
               hasTipDarkColor={true}
             />
           </S.MainContainer>
+          
           {!isMobile && (
-            <TagModal
-              open={isModalOpen}
-              onClose={handleToggleModal}
-              items={getTipItem(tipType)}
+            <InfoContainerDesktop
+              show={isModalOpen}
+              item={getTipItem(tipType)}
             />
           )}
         </S.DesktopContainer>
@@ -94,11 +95,13 @@ export default function Tips() {
         <Footer />
       </S.Container>
 
-      <TagModal
-        open={isModalOpen}
-        onClose={handleToggleModal}
-        items={getTipItem(tipType)}
-      />
+      {isMobile ? (
+        <TagModal
+          open={isModalOpen}
+          onClose={handleToggleModal}
+          items={getTipItem(tipType)}
+        />
+      ) : null}
     </>
   )
 }
