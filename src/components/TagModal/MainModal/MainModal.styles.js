@@ -29,6 +29,10 @@ export const Main = styled.main`
     color: #2D3047;
 
     margin-left: 10px;
+
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -39,4 +43,8 @@ export const ItemTitle = styled.span`
   line-height: 14px;
 
   white-space: wrap;
+
+  @media (min-width: 768px) {
+    font-size: 1.875rem;
+  }
 `;

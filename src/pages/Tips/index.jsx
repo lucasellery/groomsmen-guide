@@ -8,12 +8,14 @@ import { dateHour, groomsmen, bridesmaid, inspiration, address, tips as tipsTag 
 import { ReactComponent as MainIcon } from '../../assets/icons/main-icon.svg';
 import { ReactComponent as ManualSmall } from '../../assets/icons/manual-small.svg';
 import { useIsMobile } from '../../hooks/useIsMobile';
+import { InfoContainerDesktop } from '../../components/InfoContainerDesktop';
 
 export default function Tips() {
   const navigate = useNavigate();
   const isMobile = useIsMobile();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInfoContainerOpened, setIsInfoContainerOpened] = useState(false);
   const [tipType, setTipType] = useState('');
 
   function getTipItem(tip) {
@@ -32,7 +34,12 @@ export default function Tips() {
 
   const handleToggleModal = (type) => {
     setTipType(type);
-    setIsModalOpen(!isModalOpen);
+
+    if(isMobile) {
+      setIsModalOpen(!isModalOpen);
+    } else {
+      setIsInfoContainerOpened(true);
+    }
   }
 
   return (
@@ -82,11 +89,12 @@ export default function Tips() {
               hasTipDarkColor={true}
             />
           </S.MainContainer>
+          
           {!isMobile && (
-            <TagModal
-              open={isModalOpen}
-              onClose={handleToggleModal}
+            <InfoContainerDesktop
+              show={isInfoContainerOpened}
               items={getTipItem(tipType)}
+              onClose={() => setIsInfoContainerOpened(false)}
             />
           )}
         </S.DesktopContainer>
@@ -94,11 +102,13 @@ export default function Tips() {
         <Footer />
       </S.Container>
 
-      <TagModal
-        open={isModalOpen}
-        onClose={handleToggleModal}
-        items={getTipItem(tipType)}
-      />
+      {isMobile ? (
+        <TagModal
+          open={isModalOpen}
+          onClose={handleToggleModal}
+          items={getTipItem(tipType)}
+        />
+      ) : null}
     </>
   )
 }
