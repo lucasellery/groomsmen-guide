@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const InspirationContainer = styled.div`
   display: flex;
   flex-direction: column;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const Title = styled.span`
@@ -34,6 +38,10 @@ export const GroomsmenImageContainer = styled.div`
   align-items: flex-start;
 
   margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    align-items: center;
+  }
 `;
 
 export const BridesmaidImageContainer = styled.div`
@@ -42,6 +50,10 @@ export const BridesmaidImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media (min-width: 768px) {
+    align-items: center;
+  }
 `;
 
 export const Image = styled.img`

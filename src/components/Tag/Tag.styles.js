@@ -27,11 +27,11 @@ export const Container = styled.div`
   }
 
   &:hover {
-    background: ${props => props.hasTipDarkColor ? "rgba(169, 187, 197, 0.9)" : "rgba(169, 187, 197, 0.6)"};
+    background: ${props => props.hasTipDarkColor ? "rgba(169, 187, 197, 0.7)" : "rgba(169, 187, 197, 0.4)"};
   }
 
   @media (min-width: 768px) {
-    width: 30%;
+    width: 30vw;
     height: 66px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
