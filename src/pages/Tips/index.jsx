@@ -15,6 +15,7 @@ export default function Tips() {
   const isMobile = useIsMobile();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInfoContainerOpened, setIsInfoContainerOpened] = useState(false);
   const [tipType, setTipType] = useState('');
 
   function getTipItem(tip) {
@@ -33,7 +34,12 @@ export default function Tips() {
 
   const handleToggleModal = (type) => {
     setTipType(type);
-    setIsModalOpen(!isModalOpen);
+
+    if(isMobile) {
+      setIsModalOpen(!isModalOpen);
+    } else {
+      setIsInfoContainerOpened(true);
+    }
   }
 
   return (
@@ -86,8 +92,9 @@ export default function Tips() {
           
           {!isMobile && (
             <InfoContainerDesktop
-              show={isModalOpen}
-              item={getTipItem(tipType)}
+              show={isInfoContainerOpened}
+              items={getTipItem(tipType)}
+              onClose={() => setIsInfoContainerOpened(false)}
             />
           )}
         </S.DesktopContainer>
